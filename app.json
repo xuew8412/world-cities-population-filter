@@ -1,0 +1,107 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-27T14:55:20.691Z",
+  "item": {
+    "title": "World Cities Population Filter",
+    "subtitle": "Filter Living Atlas cities by 2020 population"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "left": {
+        "hidden": false,
+        "width": "340px",
+        "title": "Population filter",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "selector",
+            "id": "population-slider",
+            "title": "Minimum population (2020)",
+            "source": {
+              "layerId": "1a17ddc59af-layer-2"
+            },
+            "field": "Pop_2020",
+            "control": "range",
+            "limit": 24
+          },
+          {
+            "type": "kpi",
+            "id": "matching-cities",
+            "title": "Matching cities",
+            "source": {
+              "layerId": "1a17ddc59af-layer-2",
+              "scope": "view"
+            },
+            "statistic": "count",
+            "description": "Cities meeting the selected population threshold.",
+            "autoPoll": false
+          },
+          {
+            "type": "text",
+            "id": "data-note",
+            "content": "Population estimates are from the United Nations World Urbanization Prospects (2018 revision).",
+            "format": "plain"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "title": "Cities",
+        "config": {}
+      },
+      {
+        "id": "home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "default-layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": []
+  },
+  "nova": {
+    "basename": "56602847-44e6-4276-9fdd-443fe18cb155",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-fc396dd6-211e-4168-a6f1-b11da08036f6",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-27T14:55:20.687Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
